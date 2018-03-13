@@ -1,12 +1,12 @@
 {
-    "name": "trntv/yii2-file-kit",
-    "description": "Yii2 file upload and storage kit",
+    "name": "viktor68/yii2-file-kit",
+    "description": "Yii2 file upload and storage kit extended",
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "authors": [
         {
-            "name": "Eugene Terentev",
-            "email": "eugene@terentev.net"
+            "name": "Vinh Banh",
+            "email": "apacheservices68@gmail.com"
         }
     ],
     "minimum-stability": "dev",
