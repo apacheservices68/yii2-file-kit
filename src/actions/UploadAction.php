@@ -29,11 +29,6 @@ class UploadAction extends BaseAction
     /**
      * @var string
      */
-    public $storageUrl = NULL;
-
-    /**
-     * @var string
-     */
     public $fileparam = 'file';
 
     /**
@@ -94,7 +89,6 @@ class UploadAction extends BaseAction
      */
     public function init()
     {
-        $this->storageUrl = @getenv('STORAGE_URL') ? getenv('STORAGE_URL') : NULL;
         \Yii::$app->response->format = $this->responseFormat;
 
         if (\Yii::$app->request->get('fileparam')) {
@@ -130,7 +124,7 @@ class UploadAction extends BaseAction
 
                     if ($path) {
                         $output[$this->responsePathParam] = $path;
-                        $output[$this->responseUrlParam] = $this->storageUrl . $this->getFileStorage()->baseUrl . '/' . $path;
+                        $output[$this->responseUrlParam] = $this->getFileStorage()->baseUrl . '/' . $path;
                         $output[$this->responseDeleteUrlParam] = Url::to([$this->deleteRoute, 'path' => $path]);
                         $paths = \Yii::$app->session->get($this->sessionKey, []);
                         $paths[] = $path;

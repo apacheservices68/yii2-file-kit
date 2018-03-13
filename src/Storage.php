@@ -59,7 +59,8 @@ class Storage extends Component
     public function init()
     {
         if ($this->baseUrl !== null) {
-            $this->baseUrl = Yii::getAlias($this->baseUrl);
+            $storageUrl = @getenv('STORAGE_URL') ? getenv('STORAGE_URL') : NULL;
+            $this->baseUrl = $storageUrl . Yii::getAlias($this->baseUrl);
         }
 
         if ($this->filesystemComponent !== null) {
